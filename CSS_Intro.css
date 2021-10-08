@@ -1,0 +1,415 @@
+/*Cascading Style Sheets - a language to syle and lay out web pages 
+- it can be used to style and presentation of website  : 
+                            
+:                           FONT
+:                           COLOR
+:                           SPACING
+:                           LAYOUT OF PAGE
+:                           ANIMATIONS
+
+
+
+We can also add css to html file inside <head> <style> CSS </style> </head>
+CSS Rule ::
+
+- Selector = essentially "selects" the HTML element(s) to style 
+-
+-Properties = Properties which you want to change 
+
+
+CSS Declaration :: 
+
+- where you set the CSS properties to specific values :-
+  
+some-element{
+    background-color : color ;
+    font-size : --px;
+ }
+
+
+ CSS BOX MODEL :- (used for layout)
+                 Each HTML element can be considered as a BOX
+                 The standard box model describes the space an element takes up 
+                 Each box has 4 edges : 
+                               (default)MARGIN  : Outside box (acts like divider) : used to set space between one element and another 
+                                                   i.e. outiside the container.
+
+                                        BORDER  : Adds border to content
+
+                                        PADDING : Adds extra space between the boundaries of the container and its content
+                                        
+                                        CONTENT EDGES : real content of the website 
+                
+ Margin Edge 
+|_________________________________________________________________________________________|
+|                                                                                         |
+|                                                                                         |
+|    Border Edge                                                                          |
+|   |_________________________________________________________________________________|   |
+|   |                                                                                 |   |
+|   |                                                                                 |   |
+|   |    Padding Edge                                                                  |   |
+|   |   |________________________________________________________________________|    |   |
+|   |   |                                                                        |    |   |
+|   |   |                                                                        |    |   |
+|   |   |      Content Edge                                                       |    |   |
+|   |   |    |_______________________________________________________________|   |    |   |
+|   |   |    |                                                               |   |    |   |
+|   |   |    |                                                               |   |    |   |
+|   |   |    |                                                               |   |    |   |
+|   |   |    |_______________________________________________________________|   |    |   |
+|   |   |                                                                        |    |   |
+|   |   |                                                                        |    |   |
+|   |   |________________________________________________________________________|    |   |
+|   |                                                                                 |   |
+|   |_________________________________________________________________________________|   |
+|                                                                                         |
+|                                                                                         |
+|_________________________________________________________________________________________|
+    
+
+FONTS in CSS::
+
+SERIF: letters/glyphs have finishing strokes,flared or tapering ends or have 
+actual serifed endings .
+EX- lucida Bright , lucida fox, Serif , palladio etc
+
+
+SAN-SERIF : Glyphs have stroke ending sthat are plain.
+EX- open sans , fire sans , lucida sans etc.
+
+
+MONOSPACE : All glyphs have the same fixed width.
+EX- mono, monaco , lucida console , monospace.
+
+
+CURSIVE:Glyphs in cursive fonts generally have either joining strokes or
+ other cursive characteristics beyond those of italic typefaces.  .
+EX- Allura, Aguafina Script Pro, BlackJack. , Brody
+Mistral, Colombine Light, Thirsty Script 
+
+
+
+FONT-LINK:: To link a font from outer source 
+
+Ex- <link  href ="https://fonts.googleapis.com/css2?family=Pcifico&display=swap" rel ="stylesheet">
+     p{
+         font family : 'pacifico','arial narrow',arial,sans-serif;
+     } 
+
+
+Font-family : (to define a font ) 
+
+(font ,font ,font ,font ) < is used so that the browser jumps from one font to another 
+if the 1st one is not available to use 
+
+
+Font-style : (italic/oblique/bold etc)
+
+Font-size : (size)
+
+Font-Weight : (how bold strokes) 
+
+
+FORMATTING TEXT in CSS ::
+
+text-align : left , center, justify , right
+text-decoration : overline, underline , line-through, underline overline 
+text-transform : capitalize,uppercase,lowercase,none,full-width
+text-indent : 0 , 0% , 0em ,etc
+line-height
+letter-spacing
+word-spacing : normal , 0rem ,opx,etc
+text-shadow : offset-x  offset-y  blur-radius  color ; 
+
+
+
+SHORTHAND Properties in CSS: 
+_____________________________Used to write multiple values in a property
+                             saves time and energy 
+                             makes code readable
+
+EX- Background , font , margin etc 
+
+BACKGROUND Shorthand : 
+
+(
+background-color :#000 ;
+ background-image :url(image/bg.gif);
+ background-repeat : no-repeat;
+ background-position : left top;
+ ) 
+ 
+= background : #000  url(image/bg.gif)  no-repeat  left top ;
+
+
+
+                            
+CLASS AND ID :
+________________
+
+.CLASSNAME = used to group several TAGS to make styling easier
+
+tag#idname = ID IS UNIQUE . we can also use inheritence with ids 
+
+## yes a tag can have both CLASS AND ID
+
+PARENT CHILD Relationship :
+___________________________
+
+
+color:inherit;                =INHERITANCE CASCADING
+
+header ul{                    = TYPE SELECTORS
+} 
+
+section div > div > p { }     = DIRECT DESCENDENDANTS 
+    etc
+
+div.special {                 = divs in different section with same class 
+
+}
+ 
+
+
+____________________________________________
+
+SPECIFICitY::  
+
+Specificity is the means by which browsers decide 
+which CSS property values are the most relevant to 
+an element and, therefore, will be applied. 
+Specificity is based on the matching rules which are of
+ different sorts of CSS selectors.
+
+ EX- increasing specificity : p < class < ID
+
+
+ 0::least specefic  = h1 , div, header , p 
+
+ 1:: class selectors = classname
+
+ 2:ID selectors      = unique ID
+
+
+___________________________________________________________________
+
+ ADVANCED SELECTORS : 
+
+ EX- .special p,h1 {
+                     background-color: black ;
+                    }  
+
+_____________________________________________________________________
+
+PSEUDO CLASS
+_______________
+: CSS pseudo-classes are used to add styles to selectors,
+ but only when those selectors meet certain conditions. 
+ 
+ A pseudo class is expressed by adding a colon (:) 
+ after a selector in CSS, followed by a pseudo-class 
+ such as "hover", "focus", or "active", 
+
+ like this: a:hover {}
+ EX- #Negative:hover
+{
+    filter : invert(100%);
+}
+
+EX-  #meow p : last-child{
+                    color : bluegreen;
+                   }
+
+
+______________________________________________________________
+
+RESPONSIVENESS:
+
+flex function 
+
+______________________________________________________________
+
+EXTERNAL STYLESHEETS :
+  <link rel="stylesheet" href="CSS_Intro.css"> 
+
+
+
+*/
+
+body {
+    flex-flow: row wrap;
+}
+
+header {
+    padding: 16px 20 px;
+    display: inline-block;
+    max-width: 300px;
+    max-height: 30px;
+}
+
+.primary-TEXT {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-weight: 500;
+    padding: 0ex;
+    background-color: rgb(12, 12, 12);
+}
+
+#NAV {
+    height: 50px;
+    background-color: khaki;
+    width: 90%;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding: 15 15 15 15;
+    font-size: medium;
+}
+
+BODY>div {
+    border-color: blueviolet;
+}
+
+#try p :last-child {
+    padding: 0%;
+    background-color: rgb(235, 129, 129);
+    font-weight: 30;
+}
+
+#try p+p {
+    padding: 2%;
+    background-color: lavenderblush;
+    font-weight: 3;
+}
+
+#Negative:hover {
+    filter: invert(100%);
+}
+
+li em {
+    color: rgb(36, 1, 1);
+    list-style-type: square;
+    background-color: burlywood;
+    align-content: center;
+}
+
+body>.primary-TEXT {
+    font-family: cursive;
+    font-size: larger;
+}
+
+.special {
+    color: rgb(113, 186, 204);
+    font-weight: 300;
+}
+
+div.special {
+    text-decoration: cyan;
+    text-size-adjust: 40;
+}
+
+#one {
+    color: blueviolet;
+}
+
+p#one>h1 {
+    color: blueviolet;
+    background-color: rgb(207, 189, 224);
+}
+
+p#Required {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    background-color: rgb(248, 235, 177);
+    COLOR: rgb(53, 4, 4);
+    Padding: 15px 10px;
+}
+
+li [class=" a "] {
+    color: rgb(48, 19, 75);
+}
+
+.background {
+    background-position: center;
+    background-size: 200;
+    background-image: url("ME.jpg");
+    background-color: brown;
+    height: 20ex;
+    width: 30ex;
+}
+
+form {
+    text-align: justify;
+    margin: 10px 15px 10px 15px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+input {
+    width: 100%;
+    background-color: rgb(84, 172, 173);
+    color: white;
+    padding: 12px 30px;
+    box-sizing: border-box;
+    border: rgb(48, 19, 75);
+    border: width 20px;
+    border-radius: 4px;
+    margin: 15px 15px 15px 15px 15px;
+}
+
+input :focus {
+    background-color: rgb(115, 99, 184);
+    border: 3px solid #555;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background-color: #4CAF50;
+    border: rgb(240, 248, 255);
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50ex;
+}
+
+footer ul {
+    font-size: 12mm;
+    padding: 15%;
+    background-color: rgb(10, 65, 46);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media all and (min-width: 1001px) {
+    #sidebar ul li a ::after {
+        font-size: medium;
+        color: black;
+        font-style: inherit;
+    }
+}
+
+@media all and (min-width: 610px)and (max-width :1000px) {
+    #sidebar ul li a ::before {
+        content: "AYO: ";
+        font-size: medium;
+        color: black;
+        font-style: italic;
+    }
+}
